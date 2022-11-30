@@ -1,8 +1,6 @@
 -- CreateTable
 CREATE TABLE IF NOT EXISTS users (
-  "id" TEXT NOT NULL,
+  "id" SERIAL PRIMARY KEY,
   "name" TEXT NOT NULL,
-  "email" TEXT NOT NULL,
-
-  PRIMARY KEY ("id")
+  "email" TEXT NOT NULL
 );
