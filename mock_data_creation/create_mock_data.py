@@ -7,7 +7,9 @@ mock_data_generator = MockGen()
 
 # example data for the users table
 profile_fields = [ 'username', 'mail']
-profile_data = [ mock_data_generator.profile(profile_fields) for i in range(10)] # not tested/documented if that will give unique data
+# caution: this data will not be unique by default...
+# to ensure uniqueness use hashable fields with '.unique.[...]' like mdg.unique.mail()
+profile_data = [ mock_data_generator.profile(profile_fields) for i in range(100000)]
 
 with open('users.csv', 'w', newline='') as csvfile:
     fieldnames = ['name', 'email']
